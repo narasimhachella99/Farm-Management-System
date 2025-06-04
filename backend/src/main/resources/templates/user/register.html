@@ -1,0 +1,84 @@
+<div th:insert="navigation/mainNav.html"></div>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="display-5">Register</div>
+            <div
+                    class="alert alert-danger"
+                    th:if="${error}"
+                    th:text="${error}"
+            ></div>
+            <div
+                    class="alert alert-success"
+                    th:if="${success}"
+                    th:text="${success}"
+            ></div>
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <label for="email">Name</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            aria-describedby="nameHelp"
+                            placeholder="Enter Name"
+                    />
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email"
+                    />
+                    <small id="emailHelp" class="form-text text-muted"
+                    ></small
+                    >
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                    />
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input
+                            type="address"
+                            class="form-control"
+                            id="address"
+                            name="address"
+                            placeholder="Your Address"
+                    />
+                </div>
+                <br>
+                <div class="text-center mt-2">
+                    <button type="submit" class="btn btn-primary ">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a href="/userLogin" class="btn btn-primary">Login</a>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+</body>
+</html>

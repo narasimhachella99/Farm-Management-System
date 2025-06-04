@@ -1,0 +1,36 @@
+<div th:insert="navigation/adminNav.html"></div>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="container-fluid mt-5">
+    <div class="row mt-2">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Quantity</th>
+                    <th scope="col"> Category</th>
+                    <th scope="col"> Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.quantity}"></td>
+                    <td th:text="${product.category}"></td>
+                    <td th:text="${product.price}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<div th:insert="navigation/userNav.html"></div>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container-fluid mt-5">
+    <div class="row mt-2">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Quantity</th>
+                    <th scope="col"> Category</th>
+                    <th scope="col"> Price</th>
+                    <th scope="col"> Add to Cart</th>
+<!--                    <form class="d-flex" th:action="@{/products}" method="get">-->
+<!--                        <input class="form-control me-sm-2" name="keyword" type="text" placeholder="Search">-->
+<!--                        <button type="submit" >Search</button>-->
+<!--                    </form>-->
+                </tr>
+
+                    <tr th:each="product : ${products}">
+                        <td th:text="${product.id}"></td>
+                        <td th:text="${product.name}"></td>
+                        <td th:text="${product.quantity}"></td>
+                        <td th:text="${product.category}"></td>
+                        <td th:text="${product.price}"></td>
+                        <td>
+<!--                            <input type="text" th:value="${product.id}" name="id" hidden/>-->
+                            <a type="submit" th:href="'/addToCart/ ?id= '+ ${product.id}" class="btn btn-secondary">Add</a>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+</body>
+</html>

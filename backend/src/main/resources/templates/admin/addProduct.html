@@ -1,0 +1,55 @@
+<div th:insert="navigation/adminNav.html"></div>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <h3 class="display-3"> Add Products</h3>
+            <div
+                    class="alert alert-danger"
+                    th:if="${error}"
+                    th:text="${error}"
+            ></div>
+            <div
+                    class="alert alert-success"
+                    th:if="${success}"
+                    th:text="${success}"
+            ></div>
+            <form action="/addProduct" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name"
+                           required/>
+                </div>
+                <br>
+                <div class="form-outline">
+                    <label for="typeNumber">Quantity</label>
+                    <input type="number" class="form-control" id="typeNumber" name="quantity" placeholder="Enter quantity"
+                           required/>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="name" class="form-control" id="category" name="category" placeholder="Enter category" required/>
+                </div>
+                <br>
+                <div class="form-outline">
+                    <label for="typeNumber">Price</label>
+                    <input type="number" class="form-control" id="typeNumber" name="price" placeholder="Enter price"
+                           required/>
+                </div>
+                <br>
+                <div class="form-group text-center mt-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+</body>
+</html>
